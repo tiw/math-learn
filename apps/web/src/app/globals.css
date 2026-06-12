@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f5f0e8;
+  --foreground: #2c2419;
+  --paper: #faf6ef;
+  --surface: #fffdf9;
+  --border: #e8dfd0;
+  --ink: #2c2419;
+  --ink-soft: #4a4035;
+  --ink-muted: #7a6f62;
+  --ink-faint: #a89888;
+  --accent: #c4785a;
+  --accent-hover: #a8614a;
+  --success: #4a7c59;
+  --wrong: #b54a4a;
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-success: var(--success);
+  --color-wrong: var(--wrong);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "PingFang SC", sans-serif;
+}
+
+@keyframes area-cell-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.area-cell-fill {
+  animation: area-cell-in 0.35s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .area-cell-fill {
+    animation: none;
+  }
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 25%, transparent);
+}
